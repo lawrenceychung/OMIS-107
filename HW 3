@@ -1,0 +1,5 @@
+1. grep -Ein "\ba[a-z]{8,} a[a-z]*" alice.txt
+2. sed -r "s/\bthe [A-Z]|\ba [A-Z]/his or her majesty &/g" alice.txt | head -3584
+3. sed -r "s/([A-Za-z]*)ed\b/did \1/g " alice.txt | head -3723
+4. sed -r "s/\bsaid [A-Za-z]+([,.:;])/said someone\1/g" alice.txt | head -3317
+
