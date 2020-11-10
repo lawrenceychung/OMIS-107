@@ -1,0 +1,16 @@
+1. mkdir myexam
+2. cp OMIS107/practice_midterm/files/??????????* ~/myexam/
+3. cp files/*[ir]*27 ../../lchung/myexam
+4. grep -Einw "[a-z]{15,}" alice.txt
+5. grep -Ein "\bdo\b.*\?" alice.txt
+6. grep -Einw "and [a-z]+ and|and [a-z]+ [a-z]+ and" alice.txt
+7. sed -r "s/[a-z]+form[a-z]*|[a-z]*form[a-z]+/***/g" alice.txt | head -3691
+8. ps -efl | awk '{if ($7 == 80) print $0}' | wc -l
+9. ls -l | awk '{if ($1 ~/^d........x/) print $0}'
+10. ls -l | awk '{if ($6=="Apr" && $8==2018) print $9}'
+11. ls -l | awk '{if (NR  > 1&& $1 ~/^-/) print $0}' | sort -k5,5nr | head -2
+12. groups $(whoami) | sed -r "s/.*: //g" |wc -w | awk 'BEGIN{answer = 0}{if ($1 > 2) answer++} END{print answer}'
+13. ps -aux | awk -v name=$(ps -aux | sort -k3,3 | tail -1 | awk '{print $1}') 'BEGIN{count = 0} {if (NR > 1 && $1 == name) count++} END{print count}'
+14. grep -Ein "\b$(whoami | sed -r "s/([a-z][a-z]).*/\1/g")" alice.txt
+15. who | awk -v name=$(cat usernames| head -2 | tail -1) 'BEGIN{count = 0} {if ($1 == name) count++} END{print count}'
+16. echo There are $(grep -Ein "$(cat expr)" alice.txt | wc -l) lines in alice.txt that math the given expression
