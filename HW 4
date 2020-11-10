@@ -1,0 +1,4 @@
+1. awk -F"," '{if($3=="MGMT" && $4 >= 2 && $4 < 5){print $0}}' students.txt
+2. awk -F"," '{if($2 ~ /[A-Za-z]{8,} [A-Za-z]{8,}/){print $0}}' students.txt
+3. awk -F"," 'BEGIN{totalgpa = 0; studentcount = 0} {if(NR > 1 && $5 > 3) {totalgpa += $5; studentcount++}} END{print totalgpa/studentcount}' students.txt
+
