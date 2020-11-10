@@ -1,0 +1,8 @@
+Problem 1: 	cp ../OMIS107/HW2/*1[2-7][0-9] .
+		        cp ../OMIS107/HW2/*180 .
+Problem 2:	grep -Ein "Alice.{,7}!" alice.txt
+Problem 3: 	grep -Ein "[a-z]+form[a-z]*|[a-z]*form[a-z]+" alice.txt
+Problem 4:	grep -Einw "[a-z]*q[a-z]*a[a-z]*|[a-z]*a[a-z]*q[a-z]*" alice.txt
+
+
+
