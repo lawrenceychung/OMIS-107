@@ -1,0 +1,18 @@
+#!/bin/bash
+
+count=0
+tempcount=0
+groupname=""
+
+for group in $(groups $(whoami) | sed -r "s/^.*: //g")
+do
+        tempcount=$(cat /etc/group | awk -F":" -v group=$group '{if ($1 == group) print $4}' | sed -r "s/,/ /g" | wc -w)
+
+        if [ $tempcount -gt $count ]
+        then
+                groupname=$group
+                count=$tempcount
+        fi
+done
+
+echo The current users most numerous gorup is $groupname, which has $count members.
