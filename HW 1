@@ -1,0 +1,8 @@
+Question 1: 	ls -l ../OMIS107/HW1/
+
+Question 2: 	cd ../OMIS107/HW1/irrelevant/
+		          cat ../Sep26Lunch.txt
+
+Question 3: 	cp -r ../OMIS107/HW1/ .
+
+Question 4: 	Sep27Lunch.txt
