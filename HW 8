@@ -1,0 +1,35 @@
+from os import fork, waitpid
+
+count = 0
+n = float(input('Give me a number: '))
+
+pid = fork()
+
+if pid == 0:
+        if n > 10:
+                exit(0)
+        else:
+                exit(1)
+else:
+        pid2 = fork()
+        if pid2 == 0:
+                if n > 20:
+                        exit(0)
+                else:
+                        exit(1)
+        else:
+                (pid,status) = waitpid(0,0)
+                if status == 0:
+                        print ('PID',pid,'terminated successfully')
+                        count+=1
+                else:
+                        print('PID',pid,'did not terminated successfully')
+
+                (pid,status) = waitpid(0,0)
+                if status == 0:
+                        print('PID',pid,'terminated successfully')
+                        count+=1
+                else:
+                        print('PID',pid,'did not terminated successfully')
+
+                print('Total children ended successfully:',count)
