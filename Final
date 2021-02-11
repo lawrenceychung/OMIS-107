@@ -1,0 +1,45 @@
+0. I am committed to being a person of integrity. I pledge, as a member of the Santa Clara University community, to abide by and uphold the standards of academic integrity contained in the Student Conduct Code.
+1. mkdir myfinal
+2. cp ../OMIS107/final/files/?*[f2]* myfinal/
+3. grep -Ein "\bplay[a-z]+" alice.txt
+4. sed -r  "s/\bbit\b(.*[!?])/---\1/g" alice.txt
+5. ps -aux | awk '{if($4 > 0.5) print $0}'
+6. sed -r "s/$(cat /home/OMIS107/final/sub | head -1)/$(cat /home/OMIS107/final/sub |  tail -1)/g" alice.txt 
+7. ls -l /home/OMIS107/final/ | wc -l | awk 'BEGIN{answer=0} {if ($1 > 3) answer+=1} END{print answer}'
+8.
+#!/bin/bash
+
+count=0
+
+for student in $(cat /home/OMIS107/final/names | sort | uniq)
+do
+        for realstudent in $(cat /etc/passwd | awk -F":" '{print $1}')
+        do
+                if [ $student =  $realstudent ]
+                then
+                        echo $student exists
+                        count=$(($count + 1))
+                        break
+                fi
+        done
+done
+
+echo The file names contain $count actual users
+9. B
+10.
+from os import fork,wait
+
+while True:
+
+        txt=input('Give me a string: ')
+        n=len(txt) # n is the number of characters in the input
+        for i in range(0,n): # i = 0,1,2,...,n-1
+                pid=fork()
+                if pid==0:
+                        print('character ', i, '= ',txt[i])
+                        exit(0)
+        if n > 5:
+                print('The input is longer than 5 characters!')
+        for i in range(0,n):
+                wait()
+
