@@ -1,0 +1,5 @@
+My input was "qwertyuiopasdfghjklzxcvbnmqwer" which is 30 characters equivalent to 30 bytes. Therefore, the input that I gave
+must have been less than what was allocated for the process because I didn't get a segmentation fault, but at the same time
+the input must have also been greater than the empty allocated space in the RAM for both the number and name variables because
+the name variable overrid part of the number variable. Thus my input overrid some of the data in the number input variable
+causing the calculations to be wrong.
